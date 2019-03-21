@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/header/NavBar';
 import PhotoItem from './components/PhotoItem';
 import SearchBar from './components/SearchBar';
+import UploadPhoto from './components/UploadPhoto';
 import './App.css';
 
 import { Container, Row, Col } from 'reactstrap';
@@ -35,7 +37,7 @@ class App extends Component {
               )
             })}
           </Row>
-        </Container>
+        </Container>       
       </div>
     );
   }

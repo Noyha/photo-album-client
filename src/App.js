@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/header/NavBar';
 import PhotoItem from './components/PhotoItem';
+import SearchBar from './components/SearchBar';
 import './App.css';
 
 import { Container, Row, Col } from 'reactstrap';
@@ -20,6 +21,12 @@ class App extends Component {
         <NavBar />
         <Container>
           <Row>
+            <Col>
+              <SearchBar />
+            </Col>
+          </Row>
+          <br />
+          <Row> 
             {this.state.photos.map(photo => {
               return (
                 <Col sm="4">

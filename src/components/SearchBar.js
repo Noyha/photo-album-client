@@ -5,7 +5,8 @@ const SearchBar = (props) => {
   return (
     <div>
       <InputGroup>
-        <Input placeholder="Search hashtag..." />
+        <Input
+          placeholder="Search hashtag..." />
         <InputGroupAddon addonType="append">
           <Button color="secondary">Search!</Button>
         </InputGroupAddon>

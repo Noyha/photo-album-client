@@ -8,13 +8,24 @@ import './App.css';
 
 import { Container, Row, Col } from 'reactstrap';
 
+import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
+
 class App extends Component {
   state = {
-    photos: [
-      { id: 1, desc: 'had so much fun in TLV party', imgPath: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180', tags: ['party', 'fun'] },
-      { id: 2, desc: 'my loveeee', imgPath: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180', tags: ['love', 'heart'] },
-      { id: 3, desc: 'the perfect place', imgPath: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180', tags: ['beach', 'sun', 'fun'] }
-    ]
+    photos: [],
+    query: ''
+  }
+
+  search() {
+    const BASE_URL = '/api/photos';
+    const FETCH_URL = `${BASE_URL}?hashtag=${this.state.query}`;
+    fetch(FETCH_URL, {
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then(photos => {
+      this.setState({ photos })
+    })
   }
 
   render() {
@@ -24,7 +35,21 @@ class App extends Component {
         <Container>
           <Row>
             <Col>
-              <SearchBar />
+              <InputGroup>
+                <Input 
+                  placeholder="Search hashtag..."
+                  value={this.state.query}
+                  onChange={event => { this.setState({ query: event.target.value }) }}
+                  onKeyPress={event => {
+                    if(event.key === 'Enter') {
+                      this.search()
+                    }
+                  }} 
+                />
+                <InputGroupAddon addonType="append">
+                  <Button onClick={() => this.search()} color="secondary">Search!</Button>
+                </InputGroupAddon>
+              </InputGroup>
             </Col>
           </Row>
           <br />
@@ -32,12 +57,14 @@ class App extends Component {
             {this.state.photos.map(photo => {
               return (
                 <Col sm="4">
-                  <PhotoItem photo={photo}/>
+                  <PhotoItem 
+                    photo={ photo } />
                 </Col>
               )
             })}
           </Row>
-        </Container>       
+        </Container>
+        <UploadPhoto />
       </div>
     );
   }

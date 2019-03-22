@@ -8,17 +8,14 @@ import './App.css';
 
 import { Container, Row, Col } from 'reactstrap';
 
-import { InputGroup, InputGroupAddon, Button, Input } from 'reactstrap';
-
 class App extends Component {
   state = {
-    photos: [],
-    query: ''
+    photos: []
   }
 
-  search() {
+  search = (query) => {
     const BASE_URL = '/api/photos';
-    const FETCH_URL = `${BASE_URL}?hashtag=${this.state.query}`;
+    const FETCH_URL = `${BASE_URL}?hashtag=${query}`;
     fetch(FETCH_URL, {
       method: 'GET'
     })
@@ -35,21 +32,8 @@ class App extends Component {
         <Container>
           <Row>
             <Col>
-              <InputGroup>
-                <Input 
-                  placeholder="Search hashtag..."
-                  value={this.state.query}
-                  onChange={event => { this.setState({ query: event.target.value }) }}
-                  onKeyPress={event => {
-                    if(event.key === 'Enter') {
-                      this.search()
-                    }
-                  }} 
-                />
-                <InputGroupAddon addonType="append">
-                  <Button onClick={() => this.search()} color="secondary">Search!</Button>
-                </InputGroupAddon>
-              </InputGroup>
+              <SearchBar 
+                search={ this.search } />
             </Col>
           </Row>
           <br />

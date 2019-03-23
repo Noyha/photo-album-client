@@ -33,19 +33,20 @@ class App extends Component {
           <Row>
             <Col>
               <SearchBar 
-                search={ this.search } />
+                search={ this.search } 
+              />
             </Col>
           </Row>
           <br />
           <Row> 
-            {this.state.photos.map(photo => {
+            { this.state.photos.map((photo, k) => {
               return (
-                <Col sm="4">
+                <Col sm="4" key={ k }>
                   <PhotoItem 
                     photo={ photo } />
                 </Col>
               )
-            })}
+            }) }
           </Row>
         </Container>
         <UploadPhoto />

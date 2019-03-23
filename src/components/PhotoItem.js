@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody } from 'reactstrap';
 
 class PhotoItem extends Component {
   render() {
-    let photo = { description: '', path: '', hashtags: [], date: '' };
-    photo = this.props.photo !== null ? this.props.photo : photo;
-    // const { _id, desc, imgPath, hashtags } = this.props.photo;
+    const photo = this.props.photo !== null ? this.props.photo : null;
     return (
       <div>
         <Card>

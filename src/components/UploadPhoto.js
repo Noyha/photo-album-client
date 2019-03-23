@@ -38,7 +38,7 @@ class UploadPhoto extends Component {
     return (
         <Container>         
             <Row>
-                <Col>
+                <Col sm="12" md={{ size: 6, offset: 3 }}>
                     <Form onSubmit={ this.onSubmitForm }>
                         <FormGroup>
                             <Label for="desc">Description</Label>

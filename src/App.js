@@ -27,30 +27,34 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Container>
-          <Row>
-            <Col>
-              <SearchBar 
-                search={ this.search } 
-              />
-            </Col>
-          </Row>
-          <br />
-          <Row> 
-            { this.state.photos.map((photo, k) => {
-              return (
-                <Col sm="4" key={ k }>
-                  <PhotoItem 
-                    photo={ photo } />
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Route exact path="/" component={ UploadPhoto }/>
+          <Route path="/search" render={props => (
+            <Container>
+              <Row>
+                <Col sm="12" md={{ size: 6, offset: 3 }}>
+                  <SearchBar 
+                    search={ this.search } 
+                  />
                 </Col>
-              )
-            }) }
-          </Row>
-        </Container>
-        <UploadPhoto />
-      </div>
+              </Row>
+              <br />
+              <Row> 
+                { this.state.photos.map((photo, k) => {
+                  return (
+                    <Col sm="4" key={ k }>
+                      <PhotoItem 
+                        photo={ photo } />
+                    </Col>
+                  )
+                }) }
+              </Row>
+            </Container> 
+          )} />
+        </div>
+      </Router>
     );
   }
 }

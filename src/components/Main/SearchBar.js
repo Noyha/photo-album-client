@@ -29,7 +29,7 @@ class SearchBar extends Component {
             onKeyPress={ this.onEnterPress } 
           />
           <InputGroupAddon addonType="append">
-            <Button onClick={ this.onSearchClick } color="secondary">Search!</Button>
+            <Button onClick={ this.onSearchClick } color="dark" className="silver-color silver-border">Search!</Button>
           </InputGroupAddon>
         </InputGroup>
       </div>

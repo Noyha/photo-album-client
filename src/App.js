@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import NavBar from './components/header/NavBar';
-import PhotoItem from './components/PhotoItem';
-import SearchBar from './components/SearchBar';
-import UploadPhoto from './components/UploadPhoto';
+import NavBar from './components/Header/NavBar';
+import SearchBar from './components/Main/SearchBar';
+import PhotosList from './components/Main/PhotosList/PhotosList';
+import UploadPhoto from './components/Main/UploadPhoto';
+
 import './App.css';
-
 import { Container, Row, Col } from 'reactstrap';
-
 class App extends Component {
   state = {
     photos: []
@@ -42,15 +41,10 @@ class App extends Component {
               </Row>
               <br />
               <Row> 
-                { this.state.photos.map((photo, k) => {
-                  return (
-                    <Col sm="4" key={ k }>
-                      <PhotoItem 
-                        photo={ photo } />
-                    </Col>
-                  )
-                }) }
-              </Row>
+                <PhotosList 
+                  photos={this.state.photos}
+                />
+              </Row>            
             </Container> 
           )} />
         </div>

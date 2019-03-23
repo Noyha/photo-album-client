@@ -1,0 +1,13 @@
+.form-border {
+    border: 1px solid #ced4da;
+    border-radius: 1.5625rem;
+    padding: 2rem;
+}
+
+.silver-color {
+    color: #ced4da;
+}
+
+.silver-border, .silver-border:hover {
+    border-color: #ced4da;
+}

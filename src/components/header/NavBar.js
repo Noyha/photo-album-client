@@ -27,8 +27,8 @@ class NavBar extends Component {
                 <Navbar color="dark" dark expand="sm" className="mb-5">
                     <Container>
                         <NavbarBrand href="/" >Photo Album App</NavbarBrand>
-                        <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen} navbar>
+                        <NavbarToggler onClick={ this.toggle } />
+                        <Collapse isOpen={ this.state.isOpen } navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <Link className="nav-link" to="/">

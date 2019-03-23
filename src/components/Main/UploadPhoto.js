@@ -45,7 +45,9 @@ class UploadPhoto extends Component {
         <Container className="silver-color">         
             <Row>
                 <Col sm="12" md={{ size: 6, offset: 3 }}>
-                    <Form className="form-border" onSubmit={ this.onSubmitForm } >
+                    <Form 
+                        className="form-border" 
+                        onSubmit={ this.onSubmitForm }>
                         <FormGroup>
                             <Label for="desc">Description</Label>
                             <Input 
@@ -66,7 +68,11 @@ class UploadPhoto extends Component {
                                 Upload Image
                             </FormText>
                         </FormGroup>
-                        <Button color="dark" className="silver-color silver-border">Submit</Button>
+                        <Button 
+                            color="dark" 
+                            className="silver-color silver-border">
+                            Submit
+                        </Button>
                     </Form>
                     { message } 
                 </Col>

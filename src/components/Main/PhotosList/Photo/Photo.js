@@ -9,7 +9,7 @@ class Photo extends Component {
   handleMouseHover = () => {
     this.setState(this.toggleHoverState);
   }
-
+  // toggle state for hover functionality
   toggleHoverState = (state) => {
     return {
       isHovering: !state.isHovering,

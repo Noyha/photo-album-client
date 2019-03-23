@@ -4,9 +4,9 @@ import NavBar from './components/Header/NavBar';
 import SearchBar from './components/Main/SearchBar';
 import PhotosList from './components/Main/PhotosList/PhotosList';
 import UploadPhoto from './components/Main/UploadPhoto';
-
 import './App.css';
 import { Container, Row, Col } from 'reactstrap';
+
 class App extends Component {
   state = {
     photos: []
@@ -30,7 +30,7 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <Route exact path="/" component={ UploadPhoto }/>
-          <Route path="/search" render={props => (
+          <Route path="/search" render={() => (
             <Container>
               <Row>
                 <Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -42,7 +42,7 @@ class App extends Component {
               <br />
               <Row> 
                 <PhotosList 
-                  photos={this.state.photos}
+                  photos={ this.state.photos }
                 />
               </Row>            
             </Container> 

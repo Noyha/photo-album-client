@@ -1,6 +1,5 @@
 import React from 'react';
 import Photo from '../PhotosList/Photo/Photo';
-
 import { Col } from 'reactstrap';
 
 // display a list of up to 12 photos

@@ -1,17 +1,17 @@
-Name: Noy Hadaria
+## Photo Album Client
 
-Course: FullStack 4580 - Asaf Blum
+git clone https://github.com/Noyha/photo-album-client.git
 
-For front:
+* npm install
 
-npm install
+* npm run build, go to server folder (photo-album-server) and run:
 
-npm start
+* npm install
 
-runing on port 3000
+* npm start
 
-and run server on port 5000
+the server will host the compiled content from the react frontend project
 
 
-* can't host the build directory on server, didn't had time to fix it
+to exploar only the client, run npm start (http://localhost:3000) from this directory
 

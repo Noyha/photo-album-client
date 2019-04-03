@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './components/header/NavBar';
-import SearchBar from './components/main/SearchBar';
-import PhotosList from './components/main/photosList/PhotosList';
-import UploadPhoto from './components/main/UploadPhoto';
+import SearchBar from './components/Main/SearchBar';
+import PhotosList from './components/Main/PhotosList/PhotosList';
+import UploadPhoto from './components/Main/UploadPhoto';
 import './App.css';
 import { Container, Row, Col } from 'reactstrap';
 

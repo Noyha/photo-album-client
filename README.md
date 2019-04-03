@@ -13,5 +13,5 @@ git clone https://github.com/Noyha/photo-album-client.git
 the server will host the compiled content from the react frontend project
 
 
-to exploar only the client, run npm start (http://localhost:3000) from this directory
+to explore only the client, run npm start (http://localhost:3000) from this directory
 
